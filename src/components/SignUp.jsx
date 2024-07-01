@@ -18,14 +18,14 @@ export default function SignUp(){
      const {register,handleSubmit}=useForm()
    
      const create=async (data)=>{
-        console.log(data)
+        
          setError('')    
         try {
             const session=await authService.createAccount(data)
             alert(session)
             if(session)
             {
-                alert("D")
+               
                const userData=await authService.getCurrentUser()
               if(userData) dispatch(login(userData));
                 navigate('/') 

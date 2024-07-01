@@ -29,10 +29,7 @@ function PostForm({post,}){
         if(file){
             service.deleteFile(post.featuredImage)
        }
-       file.then((e)=>{
-        console.log(e.$id)
-        setFeatured(e.$id) 
-       })
+       
         console.log(file)
         console.log(post)
         console.log(data)
@@ -45,9 +42,9 @@ function PostForm({post,}){
        else{
         //  console.log(data.image[0])
             const file=await service.uploadFile(data.image[0])
-           if(file.message =="File extension not allowed")
+           if(data.message =="File extension not allowed")
            {
-              setError("File extension not allowed")
+              setError(data.message)
            }
            else if (file) {
             const fileId = file.$id;

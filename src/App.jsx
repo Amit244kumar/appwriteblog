@@ -9,12 +9,10 @@ import Footer from './components/footer/Footer'
 import { Outlet } from 'react-router-dom'
 
 function App() {
-
-  // console.log(import.meta.env.VITE_APPWRITE_DATABASE_ID)
   
   const [loading,setLoading]=useState(true)
   const dispatch=useDispatch()
-  // alert(conf.appwriteDatabaseId)
+
   useEffect(()=>{
     // console.log(authService.getCurrentUser())  
     authService.getCurrentUser()
